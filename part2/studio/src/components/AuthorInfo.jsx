@@ -1,5 +1,30 @@
+import recipedata from "./recipe.json";
+import "./styling.css";
+
+
+
 function AuthorInfo() {
-   return;
+  
+  const recipeAuthor = 
+  <div>
+    {recipedata[0].author}
+  </div>
+
+  const recipeAuthorImage = 
+  <img className = "authorImage" src={recipedata[0].authorImage} />
+
+  // using variable twice
+  let url = recipedata[0].website;
+  const recipeWebsite = <a href={url} target="_blank">{url}</a>
+  // target blank: opens the url to another tab
+  
+  return (
+    <div>
+      {recipeAuthorImage}
+      {recipeAuthor}
+      {recipeWebsite}
+    </div>
+   )
  }
  
  export default AuthorInfo;
